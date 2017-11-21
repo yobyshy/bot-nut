@@ -68,7 +68,11 @@ if (command === "mixed") {
               member.addRole(bgnRole);
               member.addRole(advRole);
           }
-            
+            if (command === "stream") {
+           client.setStreaming("https://www.twitch.tv/pureservers", "1");
+           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
+              
+            }
           
             
             
