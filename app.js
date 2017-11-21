@@ -73,7 +73,10 @@ if (command === "mixed") {
            msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
               
             }
-          
+          if (command === "streamoff") {
+           client.setStreaming("0");
+           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
+         }
             
             
             
