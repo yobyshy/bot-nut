@@ -24,12 +24,12 @@ command = command.slice(prefix.length);
 
 
                       if (command === "stream") {
-           msg.client.user.setPresence("https://www.twitch.tv/pureservers", "1");
+           
            msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
-              
-            }
+              client.user.setPresence({game: {name: "" , url: "https://www.twitch.tv/pureservers", type: "1"}}
+                      )}
           if (command === "streamoff") {
-           msg.client.user.setPresence("0");
+           client.user.setStreaming("0");
            msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
          }    
   
