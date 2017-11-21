@@ -44,7 +44,15 @@ if (command === "mixed") {
     }else {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
     } 
+                      if (command === "stream") {
+           client.user.setStreaming("https://www.twitch.tv/pureservers", "1");
+           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
               
+            }
+          if (command === "streamoff") {
+           client.user.setStreaming("0");
+           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
+         }    
             }
             if (command === "pug") {
       let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
@@ -68,15 +76,7 @@ if (command === "mixed") {
               member.addRole(bgnRole);
               member.addRole(advRole);
           }
-            if (command === "stream") {
-           client.user.setPresence("https://www.twitch.tv/pureservers", "1");
-           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
-              
-            }
-          if (command === "streamoff") {
-           client.user.setPresence("0");
-           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
-         }
+
             
             
             
