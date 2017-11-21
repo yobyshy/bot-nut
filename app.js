@@ -91,7 +91,7 @@ command = command.slice(prefix.length);
 
 
     }
-    
+            }
   
 });
 
