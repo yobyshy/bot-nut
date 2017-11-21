@@ -69,12 +69,12 @@ if (command === "mixed") {
               member.addRole(advRole);
           }
             if (command === "stream") {
-           client.user.setstream("https://www.twitch.tv/pureservers", "1");
+           client.user.setPresence("https://www.twitch.tv/pureservers", "1");
            msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
               
             }
           if (command === "streamoff") {
-           client.user.setstream("0");
+           client.user.setPresence("0");
            msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
          }
             
