@@ -22,7 +22,18 @@ if(!msg.content.startsWith(prefix)) return;
 let command = msg.content.split(" ")[0];
 command = command.slice(prefix.length);
 
-if (command === "mixed") {
+
+                      if (command === "stream") {
+           client.user.setStreaming("https://www.twitch.tv/pureservers", "1");
+           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
+              
+            }
+          if (command === "streamoff") {
+           client.user.setStreaming("0");
+           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
+         }    
+  
+  if (command === "mixed") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
@@ -43,16 +54,7 @@ if (command === "mixed") {
       msg.channel.send(advRole + " Join the Pug! connect 209.58.164.222:27015;password pureadvanced");
     }else {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
-    } 
-                      if (command === "stream") {
-           client.user.setStreaming("https://www.twitch.tv/pureservers", "1");
-           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
-              
-            }
-          if (command === "streamoff") {
-           client.user.setStreaming("0");
-           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
-         }    
+   
             }
             if (command === "pug") {
       let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
