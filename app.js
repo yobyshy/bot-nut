@@ -7,7 +7,12 @@ client.on('ready', () => {
 
 const prefix = "!";
 
-
+client.on('guildMemberAdd', member => {
+               let mixRole = member.guild.roles.find('name', 'Mixed PUGs');
+               let NotRole = member.guild.roles.find('name', 'Notify');
+               member.addRole(mixRole);
+               member.addRole(NotRole);
+ +});
 
 client.on('message', msg => {
 if(!msg.content.startsWith(prefix)) return;
