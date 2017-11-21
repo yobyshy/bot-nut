@@ -23,6 +23,16 @@ let command = msg.content.split(" ")[0];
 command = command.slice(prefix.length);
 
 
+                      if (command === "stream") {
+           msg.client.user.setPresence("https://www.twitch.tv/pureservers", "1");
+           msg.channel.send("@here Come join us live at https://www.twitch.tv/pureservers");
+              
+            }
+          if (command === "streamoff") {
+           msg.client.user.setPresence("0");
+           msg.channel.send("@everyone Watch the VOD at https://www.twitch.tv/pureservers/videos/all");
+         }    
+  
   if (command === "mixed") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
