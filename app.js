@@ -26,6 +26,14 @@ if (command === "mixed") {
       let bgnRole = msg.guild.roles.find("name", "Notify");
     msg.channel.send(bgnRole + ' Join the Pug! connect 209.58.178.80:27015;password purematch');
   }
+  
+  
+  if (command === "mixed2") {
+    let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
+      let advRole = msg.guild.roles.find("name", "AdvNotify");
+      let bgnRole = msg.guild.roles.find("name", "Notify");
+    msg.channel.send(bgnRole + ' Join the Pug! connect 209.58.177.49:27015;password purematch');
+  }
 
   if (command === "dm") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
