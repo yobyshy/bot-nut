@@ -28,7 +28,7 @@ if (command === "mixed") {
   }
   
   
-  if (command === "mixed2") {
+  if (command === "novice") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
