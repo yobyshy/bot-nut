@@ -32,7 +32,8 @@ if (command === "mixed") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
-    msg.channel.send(bgnRole + ' Join the Pug! connect 209.58.177.49:27015;password purematch');
+    let novnotify = msg.guild.roles.find("name", "NovNotify");
+    msg.channel.send(novnotify + ' Join the Pug! connect 209.58.177.49:27015;password purenovice');
   }
 
   if (command === "dm") {
@@ -51,11 +52,20 @@ if (command === "mixed") {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
     }
 
+              if (command === "noviceup") {
+                let rolio = "384906487622926337";
+                 let novnotify = msg.guild.roles.find("name", "NovNotify");
+                let memberswithrole = msg.guild.roles.get(rolio).members;
+                memberswithrole.addRole(novnotify);
+              }
+              
             }
             if (command === "pug") {
       let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
+      let novRole = msg.guild.roles.find("name", "Novice PUGs");
+      let novnotify = msg.guild.roles.find("name", "NovNotify");
       let member = msg.member;
       if(msg.member.roles.has(bgnRole.id)) {
         member.removeRole(bgnRole).catch(console.error);
@@ -73,12 +83,20 @@ if (command === "mixed") {
               if(!msg.member.roles.has(advRole.id))
               member.addRole(bgnRole);
               member.addRole(advRole);
+             }
+          if(msg.member.roles.has(novRole.id)) {
+            member.addRole(novnotify);
+            }
+          if(!msg.member.roles.has(novRole.id)) {
+            member.removeRole(novnotify);
+          }
 
 
-  }
+  
     }
 
 });
 
 
 client.login(process.env.BOT_TOKEN);
+
