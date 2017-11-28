@@ -26,21 +26,24 @@ if (command === "mixed") {
       let bgnRole = msg.guild.roles.find("name", "Notify");
     msg.channel.send(bgnRole + ' Join the Pug! connect 209.58.178.80:27015;password purematch');
   }
-  
-  
-  if (command === "novice") {
-    let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
-      let advRole = msg.guild.roles.find("name", "AdvNotify");
-      let bgnRole = msg.guild.roles.find("name", "Notify");
-    let novnotify = msg.guild.roles.find("name", "NovNotify");
-    msg.channel.send(novnotify + ' Join the Pug! connect 209.58.177.49:27015;password purenovice');
-  }
-
   if (command === "dm") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
       msg.channel.send(bgnRole + " Come join the DM server! connect 209.58.177.22:27030");
+  }
+    if (command === "noviceup") {
+                let rolio = "384906487622926337";
+                 let novnotify = msg.guild.roles.find("name", "NovNotify");
+                let memberswithrole = msg.guild.roles.get(rolio).members;
+                memberswithrole.addRole(novnotify);
+              }
+            if (command === "novice") {
+    let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
+      let advRole = msg.guild.roles.find("name", "AdvNotify");
+      let bgnRole = msg.guild.roles.find("name", "Notify");
+    let novnotify = msg.guild.roles.find("name", "NovNotify");
+    msg.channel.send(novnotify + ' Join the Pug! connect 209.58.177.49:27015;password purenovice');
   }
             if (command === "advanced") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
@@ -51,15 +54,7 @@ if (command === "mixed") {
     }else {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
     }
-
-              if (command === "noviceup") {
-                let rolio = "384906487622926337";
-                 let novnotify = msg.guild.roles.find("name", "NovNotify");
-                let memberswithrole = msg.guild.roles.get(rolio).members;
-                memberswithrole.addRole(novnotify);
-              }
-              
-            }
+   }
             if (command === "pug") {
       let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
@@ -93,8 +88,8 @@ if (command === "mixed") {
 
 
   
-    }
-
+    
+}
 });
 
 
