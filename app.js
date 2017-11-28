@@ -65,10 +65,10 @@ if (command === "mixed") {
         msg.reply("You will now be notified for PUGs");
       }
       if(msg.member.roles.has(novRole.id)) {
+            if(!msg.member.roles.has(novnotify))
             member.addRole(novnotify);
             }
-          if(msg.member.roles.has(novRole.id)) {
-            if(!msg.member.roles.has(novnotify))
+          if(msg.member.roles.has(novnotify)) {
             member.removeRole(novnotify);
           }
       if(msg.member.roles.has(modRole.id)) {
