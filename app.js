@@ -32,12 +32,6 @@ if (command === "mixed") {
       let bgnRole = msg.guild.roles.find("name", "Notify");
       msg.channel.send(bgnRole + " Come join the DM server! connect 209.58.177.22:27030");
   }
-    if (command === "noviceup") {
-                let rolio = "384906487622926337";
-                 let novnotify = msg.guild.roles.find("name", "NovNotify");
-                let memberswithrole = msg.guild.roles.get(rolio).members;
-                memberswithrole.addRole(novnotify);
-              }
             if (command === "novice") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
@@ -62,7 +56,13 @@ if (command === "mixed") {
       let novRole = msg.guild.roles.find("name", "Novice PUGs");
       let novnotify = msg.guild.roles.find("name", "NovNotify");
       let member = msg.member;
-      if(msg.member.roles.has(bgnRole.id)) {
+      if(msg.member.roles.has(novRole.id)) {
+            member.addRole(novnotify);
+            }
+          if(!msg.member.roles.has(novRole.id)) {
+            member.removeRole(novnotify);
+          }
+       if(msg.member.roles.has(bgnRole.id)) {
         member.removeRole(bgnRole).catch(console.error);
         msg.reply("You will no longer be notified for PUGs");
       }
@@ -79,12 +79,7 @@ if (command === "mixed") {
               member.addRole(bgnRole);
               member.addRole(advRole);
              }
-          if(msg.member.roles.has(novRole.id)) {
-            member.addRole(novnotify);
-            }
-          if(!msg.member.roles.has(novRole.id)) {
-            member.removeRole(novnotify);
-          }
+          
 
 
   
@@ -94,4 +89,3 @@ if (command === "mixed") {
 
 
 client.login(process.env.BOT_TOKEN);
-
