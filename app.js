@@ -56,13 +56,7 @@ if (command === "mixed") {
       let novRole = msg.guild.roles.find("name", "Novice PUGs");
       let novnotify = msg.guild.roles.find("name", "NovNotify");
       let member = msg.member;
-      if(msg.member.roles.has(novRole.id)) {
-            member.addRole(novnotify);
-            }
-          if(!msg.member.roles.has(novRole.id)) {
-            member.removeRole(novnotify);
-          }
-       if(msg.member.roles.has(bgnRole.id)) {
+      if(msg.member.roles.has(bgnRole.id)) {
         member.removeRole(bgnRole).catch(console.error);
         msg.reply("You will no longer be notified for PUGs");
       }
@@ -70,6 +64,13 @@ if (command === "mixed") {
         member.addRole(bgnRole).catch(console.error);
         msg.reply("You will now be notified for PUGs");
       }
+      if(msg.member.roles.has(novRole.id)) {
+            member.addRole(novnotify);
+            }
+          if(msg.member.roles.has(novRole.id)) {
+            if(!msg.member.roles.has(novnotify))
+            member.removeRole(novnotify);
+          }
       if(msg.member.roles.has(modRole.id)) {
           member.removeRole(bgnRole);
           member.removeRole(advRole);
@@ -83,9 +84,10 @@ if (command === "mixed") {
 
 
   
-    
+  
 }
 });
 
 
 client.login(process.env.BOT_TOKEN);
+
