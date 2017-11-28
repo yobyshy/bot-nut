@@ -59,11 +59,13 @@ if (command === "mixed") {
       if(msg.member.roles.has(modRole.id)) {
           member.removeRole(bgnRole);
           member.removeRole(advRole);
-           }
+          msg.reply("You will now be notified for PUGs");     
+      }
           if(msg.member.roles.has(modRole.id)) {
               if(!msg.member.roles.has(advRole.id))
               member.addRole(bgnRole);
               member.addRole(advRole);
+              msg.reply("You will no longer be notified for PUGs");
              }
       if(msg.member.roles.has(novRole.id)) {
             if(!msg.member.roles.has(novnotify.id))
@@ -72,7 +74,8 @@ if (command === "mixed") {
             member.addRole(bgnRole);
             msg.reply("You will now be notified for PUGs");
             }
-          if(msg.member.roles.has(novnotify.id)) {
+          if(msg.member.roles.has(novRole.id)) {
+            if(msg.member.roles.has(novnotify.id))
             if(msg.member.roles.has(bgnRole.id))
             member.removeRole(novnotify);
             member.removeRole(bgnRole);
