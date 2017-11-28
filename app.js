@@ -56,29 +56,29 @@ if (command === "mixed") {
       let novRole = msg.guild.roles.find("name", "Novice PUGs");
       let novnotify = msg.guild.roles.find("name", "NovNotify");
       let member = msg.member;
-      if(msg.member.roles.has(bgnRole.id)) {
-        member.removeRole(bgnRole).catch(console.error);
-        msg.reply("You will no longer be notified for PUGs");
-      }
-      if(!msg.member.roles.has(bgnRole.id)) {
-        member.addRole(bgnRole).catch(console.error);
-        msg.reply("You will now be notified for PUGs");
-      }
       if(msg.member.roles.has(novRole.id)) {
-            if(!msg.member.roles.has(novnotify))
+            if(!msg.member.roles.has(novnotify.id))
+            if(!msg.member.roles.has(bgnRole.id))
             member.addRole(novnotify);
+            member.addRole(bgnRole);
+            msg.reply("You will now be notified for PUGs");
             }
           if(msg.member.roles.has(novnotify)) {
+            if(msg.member.roles.has())
             member.removeRole(novnotify);
+            member.removeRole(bgnRole);
+            msg.reply("You will no longer be notified for PUGs");
           }
       if(msg.member.roles.has(modRole.id)) {
           member.removeRole(bgnRole);
           member.removeRole(advRole);
+          msg.reply("You will now be notified for PUGs");
         }
           if(msg.member.roles.has(modRole.id)) {
               if(!msg.member.roles.has(advRole.id))
               member.addRole(bgnRole);
               member.addRole(advRole);
+              msg.reply("You will no longer be notified for PUGs");
              }
           
 
