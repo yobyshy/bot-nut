@@ -43,7 +43,7 @@ if (command === "mixed") {
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
     if(msg.member.roles.has(modRole.id)) {
-      msg.channel.send(advRole + " Join the Pug! connect 209.58.164.222:27015;password pureadvanced");
+      msg.channel.send(advRole + " Join the Pug! connect 209.58.164.222:27015;password purematch");
     }else {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
     }
