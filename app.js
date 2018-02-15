@@ -36,7 +36,7 @@ if (command === "mixed") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
     let novnotify = msg.guild.roles.find("name", "NovNotify");
-    msg.channel.send(novnotify + "Join the Pug! connect 209.58.177.49:27015;for password refer to #pug-novice-announce pinned messages");
+    msg.channel.send(novnotify + "Join the Pug! connect 209.58.177.49:27015;for password, refer to #pug-novice-announce pinned messages");
   }
             if (command === "advanced") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
