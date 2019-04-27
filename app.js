@@ -24,33 +24,33 @@ if (command === "mixed") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
-    msg.channel.send(bgnRole + ' Join the Pug! connect 139.99.121.59:27017;password purematch');
+    msg.channel.send(bgnRole + ' Join the Pug! connect 139.99.73.19:27015;password purematch');
   }
   
   if (command === "mixed2") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
-    msg.channel.send(bgnRole + ' Join the Pug! connect 139.99.121.59:27018;password purematch');
+    msg.channel.send(bgnRole + ' Join the Pug! connect 139.99.72.67:27015;password purematch');
   }
-  if (command === "dm") {
-    let modRole = msg.guild.roles.find("name", "Advanced PUGs");
-      let advRole = msg.guild.roles.find("name", "AdvNotify");
-      let bgnRole = msg.guild.roles.find("name", "Notify");
-      msg.channel.send(bgnRole + " Come join the DM server! connect 139.99.121.59:27035");
-  }
+//   if (command === "dm") {
+//     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
+//       let advRole = msg.guild.roles.find("name", "AdvNotify");
+//       let bgnRole = msg.guild.roles.find("name", "Notify");
+//       msg.channel.send(bgnRole + " Come join the DM server! connect 139.99.121.59:27035");
+//   }
             if (command === "novice") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs"); 
       let advRole = msg.guild.roles.find("name", "AdvNotify");
     let novnotify = msg.guild.roles.find("name", "NovNotify");
-    msg.channel.send(novnotify + "Join the Pug! connect 139.99.121.59:27019;for password, refer to #pug-novice-announce pinned messages");
+    msg.channel.send(novnotify + "Join the Pug! connect 139.99.78.136:27015;for password, refer to #pug-novice-announce pinned messages");
   }
             if (command === "advanced") {
     let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
       let bgnRole = msg.guild.roles.find("name", "Notify");
     if(msg.member.roles.has(modRole.id)) {
-      msg.channel.send(advRole + " Join the Pug! connect 139.99.121.59:27016;password purematch");
+      msg.channel.send(advRole + " Join the Pug! connect 139.99.78.95:27015;password purematch");
     }else {
       return msg.reply("Only those with the Advanced PUGs role can use this command");
     }
