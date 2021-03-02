@@ -54,7 +54,7 @@ if (command === "mixed") {
 //     }else {
 //       return msg.reply("Only those with the Advanced PUGs role can use this command");
 //     }
-   }
+//    }
             if (command === "pug") {
       let modRole = msg.guild.roles.find("name", "Advanced PUGs");
       let advRole = msg.guild.roles.find("name", "AdvNotify");
